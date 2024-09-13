@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  body{
+    @apply font-Kumbh text-texts-300
+  }
+  .navlinks li{
+    @apply hover:text-texts-400 transition-all duration-300 ease-linear hover:font-semibold 
+  }
+    .navlinks li .active{
+      @apply border-b-2 border-button-200 pb-7
+    }
+    .sneaker-list li{
+      @apply rounded-xl overflow-hidden
+    }
+}
