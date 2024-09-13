@@ -12,7 +12,4 @@
     .navlinks li .active{
       @apply border-b-2 border-button-200 pb-7
     }
-    .sneaker-list li{
-      @apply rounded-xl overflow-hidden
-    }
-}
+  }

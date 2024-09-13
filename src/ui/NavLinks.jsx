@@ -2,16 +2,16 @@ import { NavLink } from "react-router-dom";
 
 export default function NavLinks() {
   return (
-    <ul className="navlinks text-texts-300 md:flex gap-5 text-sm capitalize hidden ">
+    <ul className="navlinks text-texts-300 hidden gap-5 text-sm capitalize md:flex">
       <li>
-        <NavLink to="/">collection</NavLink>
+        <NavLink to="/collection">collection</NavLink>
       </li>
 
       <li>
-        <NavLink to="/">men</NavLink>
+        <NavLink to="/men">men</NavLink>
       </li>
       <li>
-        <NavLink to="/">women</NavLink>
+        <NavLink to="/women">women</NavLink>
       </li>
       <li>
         <NavLink to="/about">about</NavLink>

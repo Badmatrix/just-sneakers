@@ -4,12 +4,12 @@ import products from "../products";
 
 export default function Sneakers({ displayProduct, handleSneakerClick }) {
   return (
-    <div className="w-1/2 space-y-5">
-      <figure className="overflow-hidden rounded-2xl">
+    <div className="col-span-1 space-y-5 md:translate-x-10">
+      <figure className="overflow-hidden md:rounded-2xl">
         <img src={displayProduct.image} alt="" className="w-full" />
       </figure>
 
-      <ul className="sneaker-list flex gap-4">
+      <ul className="sneaker-list hidden md:flex md:gap-2 lg:gap-3">
         {products.map((item) => (
           <SneakersItemImage
             key={item.id}

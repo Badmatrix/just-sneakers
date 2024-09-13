@@ -12,7 +12,7 @@ export default function Homepage() {
   // console.log(displayProduct);
 
   return (
-    <main className="mx-5 flex gap-28">
+    <main className="mx-auto w-full md:grid md:grid-cols-3  md:gap-5 lg:gap-14 items-center space-y-5 px-3 md:px-5 ">
       <Sneakers
         displayProduct={displayProduct}
         handleSneakerClick={handleSneakerClick}
