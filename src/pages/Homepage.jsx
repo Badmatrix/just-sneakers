@@ -1,23 +1,18 @@
-import { useState } from "react";
-import Sneakers from "../Components/Sneakers";
-import products from "../products";
+/* eslint-disable react/prop-types */
 import SneakersDetail from "../Components/SneakersDetail";
+import SneakersImages from "../components/SneakersImages";
 
-export default function Homepage() {
-  const [displayProduct, setDisplayProduct] = useState(products.at(0));
 
-  function handleSneakerClick(id) {
-    setDisplayProduct(products.at(id - 1));
-  }
-  // console.log(displayProduct);
-
+export default function Homepage({display,handleSetDisplay }) {
+  
   return (
-    <main className="mx-auto w-full md:grid md:grid-cols-3  md:gap-5 lg:gap-14 items-center space-y-5 px-3 md:px-5 ">
-      <Sneakers
-        displayProduct={displayProduct}
-        handleSneakerClick={handleSneakerClick}
+    <div className="rlative my-5 flex flex-col items-center gap-10 px-2 py-3 md:my-10 md:flex-row">
+      <SneakersImages
+        display={display}
+        handleSetDisplay={handleSetDisplay}
+        
       />
-      <SneakersDetail displayProduct={displayProduct} />
-    </main>
+      <SneakersDetail display={display} />
+    </div>
   );
 }

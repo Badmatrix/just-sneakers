@@ -3,13 +3,10 @@
 @tailwind utilities;
 
 @layer base{
-  body{
-    @apply font-Kumbh text-texts-300
-  }
-  .navlinks li{
-    @apply hover:text-texts-400 transition-all duration-300 ease-linear hover:font-semibold 
-  }
-    .navlinks li .active{
-      @apply border-b-2 border-button-200 pb-7
-    }
+.navlink li{
+  @apply cursor-pointer md:hover:text-texts-400 hover:text-texts-300 transition duration-150 ease-linear w-fit 
+}
+.navlink li .active{
+  @apply md:border-b-2 border-button-200 pb-7
+}
   }

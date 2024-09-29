@@ -1,35 +1,24 @@
 /* eslint-disable react/prop-types */
+import { IoClose } from "react-icons/io5";
 
-import { IoMdClose } from "react-icons/io";
-import { NavLink } from "react-router-dom";
-
-export default function NavModal({ openNav,handleOpenNav }) {
-
+export default function NavModal({ openNav, handleOpenNav }) {
   return (
     <div
-      className={`text-texts-300 absolute top-0 h-screen w-2/3 space-y-8 bg-white py-10 font-semibold capitalize ${openNav ? "block" : "hidden"}`}
+      className={`space-y-5 overflow-hidden md:hidden ${openNav ? "fixed top-0 w-full bg-black/70" : "hidden"}`}
     >
-      <div>
-        <IoMdClose className="cursor-pointer text-3xl font-semibold transition-all duration-200 ease-linear hover:text-black" onClick={handleOpenNav} />
+      <div className="h-screen w-2/3 space-y-8 bg-white px-3 py-3">
+        <IoClose
+          className="text-3xl transition duration-200 ease-linear hover:text-texts-300"
+          onClick={handleOpenNav}
+        />
+        <ul className="navlink space-y-5 text-lg font-semibold capitalize">
+          <li>collection</li>
+          <li>men</li>
+          <li>women</li>
+          <li>about</li>
+          <li>contact</li>
+        </ul>
       </div>
-      <ul className="space-y-5 text-lg">
-        <li>
-          <NavLink to="/">collection</NavLink>
-        </li>
-
-        <li>
-          <NavLink to="/">men</NavLink>
-        </li>
-        <li>
-          <NavLink to="/">women</NavLink>
-        </li>
-        <li>
-          <NavLink to="/about">about</NavLink>
-        </li>
-        <li>
-          <NavLink to="/contact">contact</NavLink>
-        </li>
-      </ul>
     </div>
   );
 }

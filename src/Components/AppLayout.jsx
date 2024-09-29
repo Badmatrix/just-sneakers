@@ -1,30 +1,33 @@
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
-import CartModal from "./CartModal";
-import { useState } from "react";
 import NavModal from "./NavModal";
+import CartModal from "../components/CartModal";
+import SneakersModal from "../components/SneakersModal";
 
-export default function AppLayout() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function AppLayout({}) {
   const [openNav, setOpenNav] = useState(false);
+  const [openCartModal, setOpenCartModal] = useState(false);
 
-  function openCart() {
-    setIsOpen((open) => !open);
-  }
   function handleOpenNav() {
     setOpenNav((open) => !open);
-    document.body.classList.toggle('overflow-hidden')
-
   }
-
+  function handleCartModal() {
+    setOpenCartModal((open) => !open);
+  }
   return (
-    <div className="relative mx-auto w-[90%] sm:w-[70%] md:w-[80%]">
-      <Navbar openCart={openCart} handleOpenNav={handleOpenNav} />
-      <div className="my-5 w-full md:mx-3 md:mt-10 md:translate-x-8 lg:mt-14">
+    <div className="absolute">
+      <div className="relative h-screen max-w-full font-Kumbh md:mx-auto md:w-5/6 lg:w-3/4">
+        <Navbar
+          handleOpenNav={handleOpenNav}
+          handleCartModal={handleCartModal}
+        />
         <Outlet />
+        <CartModal openCartModal={openCartModal} />
+        <NavModal openNav={openNav} handleOpenNav={handleOpenNav} />
       </div>
-      <CartModal isOpen={isOpen} />
-      <NavModal handleOpenNav={handleOpenNav} openNav={openNav} />
+      
     </div>
   );
 }
