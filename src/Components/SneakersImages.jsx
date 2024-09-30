@@ -5,7 +5,7 @@ import SneakersListImages from "./SneakersListImages";
 export default function SneakersImages({ display, handleSetDisplay }) {
   const { title, image } = display;
   return (
-    <section className="space-y-5 md:w-1/2">
+    <section className="space-y-5 ">
       <div className="w-full overflow-hidden rounded-md">
         <img src={image} alt={title} />
       </div>

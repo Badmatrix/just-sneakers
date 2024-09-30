@@ -5,7 +5,7 @@ import NavLinks from "../components/NavLinks";
 import Avartar from "../ui/Avatar";
 import CartIcon from "../ui/CartIcon";
 
-export default function Navbar({ handleOpenNav, handleCartModal }) {
+export default function Navbar({ handleOpenNav, handleCartModal,carts }) {
   return (
     <nav className="flex items-center justify-between px-3 py-5 align-middle text-texts-400 md:mx-7 md:border-b">
       <div className="flex items-center gap-3 md:gap-8">
@@ -17,7 +17,7 @@ export default function Navbar({ handleOpenNav, handleCartModal }) {
         <NavLinks />
       </div>
       <div className="flex items-center gap-5">
-        <CartIcon handleCartModal={handleCartModal} />
+        <CartIcon handleCartModal={handleCartModal} carts={carts} />
         <Avartar />
       </div>
     </nav>

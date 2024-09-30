@@ -1,19 +1,27 @@
 /* eslint-disable react/prop-types */
 import { MdDeleteForever } from "react-icons/md";
 
+export default function CartItem({ item, deleteCart }) {
+  // console.log(item)
+  const { id, title, thumbnail, price, quantity } = item;
+  const itemPrice=price * quantity
 
-export default function CartItem({ item }) {
-  const { id, name, image, price } = item;
   return (
     <li className="flex items-center justify-between gap-3">
-      <div className="aspect-square w-12">
-        <img src="/images/image-product-1-thumbnail.jpg" alt={name} />
+      <div className="aspect-square w-12 rounded-md overflow-auto">
+        <img src={thumbnail} alt={title} />
       </div>
-      <div className="text-sm first-letter:capitalize">
-        <h6>{name}</h6> <h4>{price}</h4>
+      <div className="text-sm first-letter:capitalize text-texts-300">
+        <h6 className="">{title}</h6>
+        <h4 className="text-xs text-texts-400">
+          ${price} x {quantity } <span className="font-semibold">${itemPrice }.00</span>
+        </h4>
       </div>
       <span>
-        <MdDeleteForever className="cursor-pointer text-2xl text-texts-300" />
+        <MdDeleteForever
+          className="cursor-pointer text-2xl text-texts-300"
+          onClick={() => deleteCart(id)}
+        />
       </span>
     </li>
   );
