@@ -43,7 +43,9 @@ export default function App() {
   }
   function handleModalOverlay() {
     setModalOverlay((open) => !open);
+    setModalOverlay(true);
   }
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -58,6 +60,7 @@ export default function App() {
               handleModalOverlay={handleModalOverlay}
               modalOverlay={modalOverlay}
             />
+            
           }
         >
           <Route

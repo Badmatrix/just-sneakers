@@ -6,16 +6,26 @@ import { IoCartOutline } from "react-icons/io5";
 
 export default function ButtonsContainer({
   handleAddtoCart,
-  id,
+  display,
   increaseCartItem,
   decreaseCartItem,
+  item,
 }) {
+  const { id } = display;
+  
+
   return (
     <div className="flex flex-col gap-5 md:flex-row">
       <Button className="flex justify-between bg-texts-100 lg:w-52">
-        <FiMinus className="text-button-200" onClick={()=>decreaseCartItem(id)} />
-        <span>0</span>
-        <IoMdAdd className="text-button-200" onClick={()=>increaseCartItem(id)}/>
+        <FiMinus
+          className="text-button-200"
+          onClick={() => decreaseCartItem(id)}
+        />
+        <span>{item?.quantity || 0}</span>
+        <IoMdAdd
+          className="text-button-200"
+          onClick={() => increaseCartItem(id)}
+        />
       </Button>
       <Button
         className="gap-3 bg-button-200 text-center text-sm font-semibold hover:bg-orange-400 md:text-xs lg:w-64 lg:gap-3 lg:text-sm xl:w-72"

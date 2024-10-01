@@ -4,11 +4,11 @@ import ButtonsContainer from "../components/ButtonsContainer";
 export default function SneakersDetail({ display, dispatch, carts }) {
   // console.log(display)
   const { id, title, thumbnail, text, price } = display;
-
   const exist = carts?.some((item) => Number(item.id) === Number(id));
   const discount = (price / 100) * 50;
+  const item = carts.find((item) => item.id === id);
+
   function increaseCartItem(id) {
-    const item = carts.find((item) => item.id === id);
     if (!exist) handleAddtoCart(id);
     if (exist) {
       dispatch({
@@ -18,9 +18,9 @@ export default function SneakersDetail({ display, dispatch, carts }) {
     }
   }
   function decreaseCartItem(id) {
-    const item = carts.find((item) => item.id === id);
-
-    if (item.quantity <= 1) {
+    // const item = carts.find((item) => item.id === id);
+    if (!exist) return;
+    if (item?.quantity <= 1) {
       const del = carts.filter((item) => item.id !== id);
       dispatch({ type: "deleteCart", payload: del });
     }
@@ -69,7 +69,8 @@ export default function SneakersDetail({ display, dispatch, carts }) {
           handleAddtoCart={handleAddtoCart}
           decreaseCartItem={decreaseCartItem}
           increaseCartItem={increaseCartItem}
-          id={id}
+          display={display}
+          item={item}
         />
       </div>
     </section>

@@ -4,8 +4,16 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import NavModal from "./NavModal";
 import CartModal from "../components/CartModal";
+import SneakersModal from "../components/SneakersModal";
 
-export default function AppLayout({ carts, dispatch }) {
+export default function AppLayout({
+  carts,
+  dispatch,
+  display,
+  handleSetDisplay,
+  handleModalOverlay,
+  modalOverlay,
+}) {
   const [openNav, setOpenNav] = useState(false);
   const [openCartModal, setOpenCartModal] = useState(false);
 
@@ -32,6 +40,12 @@ export default function AppLayout({ carts, dispatch }) {
         />
         <NavModal openNav={openNav} handleOpenNav={handleOpenNav} />
       </div>
+      <SneakersModal
+        display={display}
+        handleSetDisplay={handleSetDisplay}
+        handleModalOverlay={handleModalOverlay}
+        modalOverlay={modalOverlay}
+      />
     </div>
   );
 }
