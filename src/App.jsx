@@ -35,19 +35,29 @@ function reducer(state, action) {
 export default function App() {
   const [{ carts }, dispatch] = useReducer(reducer, initialState);
   const [display, setDisplay] = useState(sneakers.at(0));
-  // const [modalOverlay, setModalOverlay] = useState(false);
+  const [modalOverlay, setModalOverlay] = useState(true);
 
   function handleSetDisplay(id) {
     setDisplay(sneakers.at(id - 1));
+    setModalOverlay(true);
   }
-
+  function handleModalOverlay() {
+    setModalOverlay((open) => !open);
+  }
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path=""
           element={
-            <AppLayout display={display} carts={carts} dispatch={dispatch} />
+            <AppLayout
+              display={display}
+              carts={carts}
+              dispatch={dispatch}
+              handleSetDisplay={handleSetDisplay}
+              handleModalOverlay={handleModalOverlay}
+              modalOverlay={modalOverlay}
+            />
           }
         >
           <Route
