@@ -1,12 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-@layer base{
-.navlink li{
-  @apply cursor-pointer md:hover:text-texts-400 hover:text-texts-300 transition duration-150 ease-linear w-fit 
-}
-.navlink li .active{
-  @apply md:border-b-2 border-button-200 pb-7
-}
-  }
+@tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+ @layer base {
+   .navlink li {
+     @apply cursor-pointer md:hover:text-texts-400 hover:text-texts-300 transition duration-150 ease-linear w-fit
+   }
+
+   .navlink li .active {
+     @apply md:border-b-2 border-button-200 pb-7
+   }
+ }
