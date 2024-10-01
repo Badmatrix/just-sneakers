@@ -43,7 +43,7 @@ export default function App() {
   }
   function handleModalOverlay() {
     setModalOverlay((open) => !open);
-    setModalOverlay(true);
+    setModalOverlay(false);
   }
   
   return (
