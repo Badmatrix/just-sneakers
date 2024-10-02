@@ -50,7 +50,6 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path=""
           element={
             <AppLayout
               display={display}
@@ -65,7 +64,6 @@ export default function App() {
         >
           <Route
             index
-            path="/"
             element={
               <HomePage
                 display={display}
