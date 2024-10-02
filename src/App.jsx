@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
-import AppLayout from "./Components/AppLayout";
-import NotFound from "./components/NotFound";
 import { useReducer, useState } from "react";
 import sneakers from "./products";
+
+import Homepage from "./pages/Homepage";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import NotFound from "./components/NotFound";
+import AppLayout from "./Components/AppLayout";
 
 const initialState = {
   products: [],
@@ -65,7 +66,7 @@ export default function App() {
           <Route
             index
             element={
-              <HomePage
+              <Homepage
                 display={display}
                 handleSetDisplay={handleSetDisplay}
                 carts={carts}
